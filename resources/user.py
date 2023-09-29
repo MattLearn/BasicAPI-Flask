@@ -65,7 +65,7 @@ class UserLogout(MethodView):
         return {"message": "Successfully logged out."}
 
 
-@blp.route("refresh")
+@blp.route("/refresh")
 class TokenRefresh(MethodView):
     @jwt_required(refresh = True)
     def post(self):

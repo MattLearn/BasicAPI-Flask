@@ -1,8 +1,8 @@
-flask
-flask-smorest
-sqlalchemy
-flask-sqlalchemy
-python-dotenv
-flask-jwt-extended
+Flask-JWT-Extended
+Flask-Smorest
+Flask-SQLAlchemy
+Flask-Migrate
 passlib
-flask-migrate
+marshmallow
+python-dotenv
+gunicorn

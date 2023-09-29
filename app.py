@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
+from flask_migrate import Migrate
 
 from resources.item import blp as ItemBlueprint
 from resources.store import blp as StoreBlueprint
@@ -29,6 +30,7 @@ def create_app(db_url=None):
     
     db.init_app(app)
     api = Api(app)
+    migrate = Migrate(app, db)
 
     # switch to something simple for testing but keep it on some sort of generator
     app.config["JWT_SECRET_KEY"] = "testphrase"  
@@ -83,8 +85,8 @@ def create_app(db_url=None):
             ), 401
         )
 
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
 
     api.register_blueprint(ItemBlueprint)
     api.register_blueprint(StoreBlueprint)

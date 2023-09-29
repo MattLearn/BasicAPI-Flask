@@ -1,0 +1,9 @@
+resources\__pycache__
+models\__pycache__
+__pycache__
+.gitwork
+instance
+.gitignore
+BasicAPI-Flask.code-workspace
+.dockerignore
+migrations
